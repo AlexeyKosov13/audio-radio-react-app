@@ -1,0 +1,165 @@
+.App {
+    margin: 0 auto;
+}
+
+body {
+    background-color: #322f3d;
+  
+    color: #e40017;
+    color: #e36bae;
+    color: #fb743e;
+    color: rgb(235, 235, 235);
+  
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  h1 {
+    margin: 1em 0 0 0;
+    font-size: 3rem;
+  }
+  
+  h2 {
+    margin-bottom: 2em;
+  }
+  
+  .radio {
+    height: 90vh;
+    margin: 0 auto;
+    width: 600px;
+   
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+    font-size: 1.2rem;
+  }
+
+  .filters  span {
+      margin: 0.25em 0.25em;
+      border: 1px solid #f2ff3e;
+      border-radius: 10px;
+      padding: 0.25em 0.75em;
+  }
+  .filters  span:hover {
+        cursor: pointer;
+        background: linear-gradient(to bottom right, #e0ff2e, #fb743e);
+      }
+
+  
+  .filters  .selected {
+      background: linear-gradient(to bottom right, #fff131, #fb743e);
+    }
+
+  
+  .stations {
+   display: flex;
+   flex-direction: column;
+    position:relative;
+    background-color: #21212b;
+    color: #fafafa;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 10px 14px 20px 1px rgba(0,0,0,0.57);
+    width: 100%;
+    margin: auto;
+    height:90vh;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+
+
+.stations::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+  
+  .station {
+    font-size: 1.4rem;
+    border: 1px solid rgb(76, 62, 95);
+    margin: 0.25em;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   .station:hover {
+      border-color: #bdc914;
+    }
+
+  
+  .stationName {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+  }
+  
+  .name {
+    width: 100%;
+    text-align: start;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .stationName img {
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 5px;
+    border: 2px solid rgb(76, 62, 95);
+    margin: 0 0.25em;
+  }
+  
+  .stationPlayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .stationBitrate {
+    border-radius: 5px 5px 0 0;
+    width: 100px;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(61, 177, 231);
+  }
+  
+  .player {
+    width: 200px;
+  }
+  
+  .rhap_container.player {
+    background-color: rgb(66, 62, 71);
+    display: flex;
+    justify-items: center;
+    padding: 5px 5px;
+    border-radius: 10px;
+  }
+
+  .rhap_volume-bar-area {
+    width: 50px;
+  }
+  
+  .rhap_stacked .rhap_controls-section {
+    margin-top: 0 !important;
+  }
+  
+  .rhap_controls-section .rhap_volume-controls {
+    justify-content: center;
+  }
+  
+  .rhap_controls-section .rhap_main-controls button[aria-label="Play"] svg path {
+    fill: rgb(235, 235, 235) !important;
+  }
+  
+  .rhap_controls-section .rhap_main-controls button[aria-label="Pause"] svg path {
+    fill: #fde142 !important;
+  }
