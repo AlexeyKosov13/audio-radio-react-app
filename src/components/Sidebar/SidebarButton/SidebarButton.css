@@ -1,0 +1,32 @@
+a { 
+    text-decoration: none;
+}
+
+.btn__item {
+    height: 80px;
+    width: 80px;
+    border-radius: 20px;
+    color: #f8d9c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.btn__item.active {
+    background-color: rgba(244,187,146,1);
+    border-radius: 20px;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.btn__item:hover {
+    color: #fff;
+}
+
+.btn__title {
+    margin: 4px auto;
+    font-weight: bold;
+    font-size: 12px;
+}

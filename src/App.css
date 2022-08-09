@@ -1,15 +1,22 @@
+@import url(./shared/GlobalStyles.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
     margin: 0 auto;
 }
 
 body {
-    background-color: #322f3d;
+    background-color: #18181a;
   
     color: #e40017;
     color: #e36bae;
     color: #fb743e;
     color: rgb(235, 235, 235);
-  
     font-family: 'Fira Sans', sans-serif;
   }
   

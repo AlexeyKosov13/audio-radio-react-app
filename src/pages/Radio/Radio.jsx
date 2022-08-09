@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { RadioBrowserApi } from "radio-browser-api";
-import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
 import "./Radio.css";
 import defaulImages from "./radio.jpg";
 
@@ -11,13 +12,13 @@ export default function Radio() {
   const [stationLanguage, setStationLanguage] = useState("english");
   const [isLoading, setIsLoading] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setupApi(stationFilter).then((data) => {
       setStations(data);
     });
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setupApi(stationFilter).then((data) => {
       setStations(data);
     });
@@ -36,6 +37,7 @@ export default function Radio() {
         return data;
       });
     setIsLoading(false);
+    console.log(stations);
     return stations;
   };
 
@@ -53,7 +55,7 @@ export default function Radio() {
     "rock",
   ];
 
-  const language = ["english", "russian", "deutsch", "spain", "france"];
+  const language = ["english", "russian", "german", "spanish", "french"];
 
   const setDefaultSrc = (event) => {
     event.target.src = defaulImages;
@@ -84,10 +86,9 @@ export default function Radio() {
         ))}
       </div>
       <div className="stations">
-        {
-        // isLoading ? (
-        //   <h2>загружаю</h2>
-        // ) : (
+        {isLoading ? (
+          <h2>загружаю</h2>
+        ) : (
           stations &&
           stations.map((station, index) => {
             return (
@@ -105,6 +106,7 @@ export default function Radio() {
                   <div className="stationBitrate">
                     bitrate: {station.bitrate}
                   </div>
+                  {/* <ReactAudioPlayer src={station.urlResolved} controls className="player"/> */}
                   <AudioPlayer
                     className="player"
                     src={station.urlResolved}
@@ -112,13 +114,13 @@ export default function Radio() {
                     layout="stacked"
                     customProgressBarSection={[]}
                     customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]}
-                    autoPlayAfterSrcChange={false}
+                    // autoPlayAfterSrcChange={false}
                   />
                 </div>
               </div>
             );
           })
-        }
+        )}
       </div>
     </div>
   );
