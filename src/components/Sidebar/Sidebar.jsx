@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import SidebarButton from "./SidebarButton/SidebarButton";
 import { MdFavorite } from "react-icons/md";
 import { FaGripfire, FaPlay } from "react-icons/fa";
@@ -8,12 +8,20 @@ import { MdSpaceDashboard } from "react-icons/md";
 import {BiRadio } from "react-icons/bi";
 
 import "./Sidebar.css";
+import apiClient from "../../spotify";
 
 export default function Sidebar() {
+  const [image, setImage] = useState("./assets/profile.jpg");
+  // useEffect(() => {
+  //   apiClient.get("me").then((response) => {
+  //     setImage(response.data.images[0].url);
+  //   });
+  // }, []);
+
   return (
     <div className="sidebar__container">
       <img
-        src="./assets/profile.jpg"
+        src={image}
         alt="profile"
         className="sidebar__profile"
       />
