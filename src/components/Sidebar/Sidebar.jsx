@@ -26,8 +26,7 @@ export default function Sidebar() {
         className="sidebar__profile"
       />
       <div>
-        <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
-        <SidebarButton title="Trending" to="/trending" icon={<FaGripfire />} />
+       
         <SidebarButton title="Player" to="/player" icon={<FaPlay />} />
         <SidebarButton
           title="Favorites"
