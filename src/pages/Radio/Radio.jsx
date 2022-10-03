@@ -62,7 +62,7 @@ export default function Radio() {
   };
 
   return (
-    <div className="radio">
+    <div className="screen__container">
       <div className="filters">
         {language.map((lang, index) => (
           <span

@@ -45,24 +45,30 @@ export default function Library() {
 
   const playPlaylist = (id) => {
     navigate("/player", { state: { id: id } });
-  }
+  };
 
   return (
     <div className="screen__container">
       <div className="library__body">
         {PlaylistsData?.map((playlist) => (
-          <div className="playlist__card" key={playlist.id} onClick={() => playPlaylist(playlist.id)}>
-            <img src={playlist.image} alt="playlistArt" className="playlist__image"/>
+          <div
+            className="playlist__card"
+            key={playlist.id}
+            onClick={() => playPlaylist(playlist.id)}
+          >
+            <img
+              src={playlist.image}
+              alt="playlistArt"
+              className="playlist__image"
+            />
             <p className="palylist__title">{playlist.name}</p>
             <p className="playlist__subtitle">{playlist.total} Songs</p>
             <div className="playlist__fade">
-            <IconContext.Provider value={{size:"50px", color: "#e99d72"}}>
-              <AiFillPlayCircle />
-          </IconContext.Provider>
+              <IconContext.Provider value={{ size: "50px", color: "#e99d72" }}>
+                <AiFillPlayCircle />
+              </IconContext.Provider>
+            </div>
           </div>
-          </div>
-          
-          
         ))}
       </div>
     </div>
